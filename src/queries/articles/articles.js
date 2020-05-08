@@ -8,6 +8,7 @@ const ARTICLE_QUERY = gql`
                 url
             }
             title
+            excerpt
             content
             category {
                 id

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Moment from "react-moment";
 
 const Card = ({ article }) => {
     const imageUrl =
@@ -19,7 +20,8 @@ const Card = ({ article }) => {
                     <h3 className="card__title">{article.title}</h3>
                 </Link>
                 <div className="card__line" />
-                <p className="card__content">{article.content.slice(0, 500)}</p>
+                {/* <p className="card__excerpt">{article.excerpt}</p> */}
+                <p className="card__content">{article.content.slice(0, 300)}</p>
                 <div className="card__bottom-row">
                     <h4 className="card__category">
                         Category: {article.category.name}
@@ -31,7 +33,14 @@ const Card = ({ article }) => {
                     </Link>
                 </div>
             </div>
-            <h4 className="card__publishedAt">{article.published_at}</h4>
+            <div className="card__publishedAt">
+                <h4 className="date">
+                    <Moment format="D">{article.published_at}</Moment>
+                </h4>
+                <h5 className="month year">
+                    <Moment format="MMM YYYY">{article.published_at}</Moment>
+                </h5>
+            </div>
         </div>
     );
 };
