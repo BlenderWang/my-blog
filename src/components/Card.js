@@ -23,9 +23,9 @@ const Card = ({ article }) => {
                 {/* <p className="card__excerpt">{article.excerpt}</p> */}
                 <p className="card__content">{article.content.slice(0, 300)}</p>
                 <div className="card__bottom-row">
-                    <h4 className="card__category">
+                    {/* <h4 className="card__category">
                         Category: {article.category.name}
-                    </h4>
+                    </h4> */}
                     <Link to={`/article/${article.id}`} className="link-reset">
                         <span>
                             <i className="fas fa-arrow-right"></i>
