@@ -1,22 +1,37 @@
-// eslint-disable-next-line
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Query from "./Query";
-
-import CATEGORIES_QUERY from "../queries/category/categories";
 import { Burger } from "./Burger";
+import Query from "./Query";
+import CATEGORIES_QUERY from "../queries/category/categories";
+import useDocumentScrollThrottled from "./useDocumentScrollThrottled";
 
 const Nav = () => {
     const [open, setOpen] = useState(false);
-    // const [showShadow, setShadow] = useState(false)
 
-    // const shadow = showShadow ? 'nav--shadow' : ''
+    const [shouldShowShadow, setShouldShowShadow] = useState(false);
+
+    const MINIMUM_SCROLL = 80;
+    const TIMEOUT_DELAY = 400;
+
+    useDocumentScrollThrottled((callbackData) => {
+        const { previousScrollTop, currentScrollTop } = callbackData;
+        const isScrolledDown = previousScrollTop < currentScrollTop;
+        const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
+
+        setShouldShowShadow(currentScrollTop > 2);
+
+        setTimeout(() => {
+            setShouldShowShadow(isScrolledDown && isMinimumScrolled);
+        }, TIMEOUT_DELAY);
+    });
+
+    const shadowStyle = shouldShowShadow ? "nav--shadow" : "";
 
     return (
         <Query query={CATEGORIES_QUERY} id={null}>
             {({ data: { categories } }) => {
                 return (
-                    <nav className="nav navbar nav--shadow">
+                    <nav className={`nav navbar ${shadowStyle}`}>
                         <ul className="ul-title">
                             <li>
                                 <Link to="/">

@@ -6,7 +6,6 @@
 
     h1 {
         margin: 2.2em 0;
-        text-align: center;
         color: lighten(#4a4a4a, 50%);
     }
 
@@ -16,5 +15,14 @@
 
     @media (max-width: 576px) {
         width: 100vw;
+
+        h1 {
+            text-align: center;
+        }
+
+        img {
+            height: 15em;
+            width: auto;
+        }
     }
 }
