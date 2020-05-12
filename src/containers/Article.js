@@ -19,7 +19,7 @@ const Article = () => {
                         : process.env.REACT_APP_BACKEND_URL + article.image.url;
 
                 return (
-                    <div>
+                    <div className="article">
                         <div
                             className="banner"
                             data-src={imageUrl}
@@ -32,7 +32,7 @@ const Article = () => {
                             <div className="container">
                                 <ReactMarkdown source={article.content} />
 
-                                <p>
+                                <p className="time">
                                     <Moment format="MMM Do YYYY">
                                         {article.published_at}
                                     </Moment>

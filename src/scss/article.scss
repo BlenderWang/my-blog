@@ -1,0 +1,46 @@
+.article {
+    position: relative;
+    top: calc(20vh + 1em);
+    display: grid;
+
+    h1 {
+        font-weight: 100;
+        font-style: italic;
+        text-align: center;
+    }
+
+    &__section {
+        p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+        }
+    }
+
+    .container {
+        transform: none;
+    }
+
+    blockquote {
+        font-size: var(--font-category);
+        font-style: italic;
+        border-left: 5px solid var(--clr-rose);
+        padding: 10px 20px;
+    }
+
+    .time {
+        font-style: italic;
+        font-size: var(--font-paragraph);
+        text-align: right;
+    }
+
+    @media (max-width: 576px) {
+        .container {
+            width: 80%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
