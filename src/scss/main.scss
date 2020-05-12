@@ -6,10 +6,15 @@
 
     h1 {
         margin: 2.2em 0;
+        text-align: center;
         color: lighten(#4a4a4a, 50%);
     }
 
     img {
         width: 100%;
+    }
+
+    @media (max-width: 576px) {
+        width: 100vw;
     }
 }

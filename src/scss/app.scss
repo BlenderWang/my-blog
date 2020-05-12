@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Staatliches&display=swap");
 
 @import "./nav.scss";
+@import "./burger.scss";
 @import "./main.scss";
 @import "./card.scss";
 
@@ -37,8 +38,16 @@ body {
 }
 
 a {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--clr-darkgray);
     text-decoration: none;
-    color: var(--clr-darkblue);
+    transition: color 0.3s linear;
+
+    &:hover {
+        color: var(--clr-rose);
+    }
 }
 
 ul,

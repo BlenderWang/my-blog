@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import Query from "./Query";
 
 import CATEGORIES_QUERY from "../queries/category/categories";
+import { Burger } from "./Burger";
 
 const Nav = () => {
+    const [open, setOpen] = useState(false);
     // const [showShadow, setShadow] = useState(false)
 
     // const shadow = showShadow ? 'nav--shadow' : ''
@@ -28,11 +30,15 @@ const Nav = () => {
                             </li>
                         </ul>
 
-                        {/* <button className="menu-btn" type="button">
-                            <span className="bar"></span>
-                        </button> */}
+                        <Burger open={open} setOpen={setOpen} />
 
-                        <ul className="ul-categories">
+                        <ul
+                            className={
+                                open === true
+                                    ? "ul-categories open"
+                                    : "ul-categories"
+                            }
+                        >
                             {categories.map((category, i) => {
                                 return (
                                     <li key={category.id}>
