@@ -7,6 +7,7 @@ import useDocumentScrollThrottled from "./useDocumentScrollThrottled";
 
 const Nav = () => {
     const [open, setOpen] = useState(false);
+    const close = () => setOpen(false);
 
     const [shouldShowShadow, setShouldShowShadow] = useState(false);
 
@@ -60,6 +61,7 @@ const Nav = () => {
                                         <Link
                                             to={`/category/${category.id}`}
                                             className="category-link-name"
+                                            onClick={() => close()}
                                         >
                                             {category.name}
                                         </Link>

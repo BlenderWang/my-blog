@@ -12,9 +12,7 @@ const Category = () => {
             {({ data: { category } }) => {
                 return (
                     <div className="container">
-                        <h3 style={{ marginBottom: "3.8rem" }}>
-                            {category.name}
-                        </h3>
+                        <h3 className="category__name">{category.name}</h3>
                         <Articles articles={category.articles} />
                     </div>
                 );
