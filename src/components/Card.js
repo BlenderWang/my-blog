@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 
 const Card = ({ article }) => {
@@ -20,8 +21,9 @@ const Card = ({ article }) => {
                     <h3 className="card__title">{article.title}</h3>
                 </Link>
                 <div className="card__line" />
-                {/* <p className="card__excerpt">{article.excerpt}</p> */}
-                <p className="card__content">{article.content.slice(0, 300)}</p>
+                <p className="card__content">
+                    <ReactMarkdown source={article.content.slice(0, 300)} />
+                </p>
                 <div className="card__bottom-row">
                     <h4 className="card__category">
                         Category: {article.category.name}
