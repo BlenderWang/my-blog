@@ -40,6 +40,12 @@
         transform: translateY(-10px);
     }
 
+    &__content {
+        p:last-child {
+            display: inline;
+        }
+    }
+
     &__category {
         font-style: italic;
     }
@@ -74,6 +80,10 @@
     .date,
     .month {
         display: block;
+    }
+
+    a {
+        font-size: var(--font-paragraph);
     }
 }
 
