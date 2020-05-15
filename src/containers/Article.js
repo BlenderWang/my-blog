@@ -21,22 +21,27 @@ const Article = () => {
                 return (
                     <div className="article">
                         <div
-                            className="banner"
+                            id="banner"
                             data-src={imageUrl}
                             data-srcset={imageUrl}
                         >
                             <h1>{article.title}</h1>
+                            <img
+                                src={imageUrl}
+                                alt={imageUrl}
+                                className="cover-img"
+                            />
                         </div>
 
                         <section className="article__section">
                             <div className="container">
-                                <ReactMarkdown source={article.content} />
-
                                 <p className="time">
                                     <Moment format="MMM Do YYYY">
                                         {article.published_at}
                                     </Moment>
                                 </p>
+
+                                <ReactMarkdown source={article.content} />
                             </div>
                         </section>
                     </div>
