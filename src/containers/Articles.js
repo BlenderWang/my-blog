@@ -5,7 +5,7 @@ import ARTICLE_QUERY from "../queries/articles/articles";
 
 const Home = () => {
     return (
-        <main className="container">
+        <main className="container container-home">
             <h1>Shirley's Blog</h1>
             <Query query={ARTICLE_QUERY}>
                 {({ data: { articles } }) => {

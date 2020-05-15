@@ -34,7 +34,7 @@ const Article = () => {
                         </div>
 
                         <section className="article__section">
-                            <div className="container">
+                            <div className="container container-article">
                                 <p className="time">
                                     <Moment format="MMM Do YYYY">
                                         {article.published_at}
