@@ -49,6 +49,11 @@
     }
 
     @media (max-width: 576px) {
+        h1 {
+            position: relative;
+            font-size: var(--font-category);
+        }
+
         .container {
             width: 80%;
         }
