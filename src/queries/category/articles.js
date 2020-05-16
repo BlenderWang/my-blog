@@ -11,6 +11,7 @@ const CATEGORY_ARTICLES_QUERY = gql`
                 image {
                     url
                 }
+                published_at
                 category {
                     id
                     name
