@@ -22,8 +22,7 @@ const Card = ({ article }) => {
                 </Link>
                 <div className="card__line" />
                 <div className="card__content">
-                    <ReactMarkdown source={article.content.slice(0, 300)} />
-                    ......
+                    <ReactMarkdown source={article.excerpt} />
                 </div>
                 <div className="card__bottom-row">
                     <h4 className="card__category">

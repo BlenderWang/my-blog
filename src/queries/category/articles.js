@@ -7,6 +7,7 @@ const CATEGORY_ARTICLES_QUERY = gql`
             articles {
                 id
                 title
+                excerpt
                 content
                 image {
                     url
