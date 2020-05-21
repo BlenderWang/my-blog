@@ -2,7 +2,6 @@ import React from "react";
 import Articles from "../components/Articles";
 import Query from "../components/Query";
 import ARTICLE_QUERY from "../queries/articles/articles";
-// import LazyLoad from "react-lazyload";
 
 const Home = () => {
     return (

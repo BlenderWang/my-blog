@@ -1,0 +1,26 @@
+svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // margin: auto;
+
+    @media (max-width: 576px) {
+        max-width: 360px;
+        width: 80vw;
+    }
+}
+
+circle {
+    animation: 3s move alternate infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(-50px);
+    }
+    to {
+        transform: translateX(550px);
+    }
+}
