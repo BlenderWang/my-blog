@@ -15,7 +15,9 @@ const ARTICLE_QUERY = gql`
                 name
             }
             published_at
-            video
+            video {
+                url
+            }
         }
     }
 `;

@@ -18,6 +18,8 @@ const Article = () => {
                         ? article.image.url
                         : process.env.REACT_APP_BACKEND_URL + article.image.url;
 
+                const videoUrl = article.video.url ? article.video.url : "";
+
                 return (
                     <div className="article">
                         <div
@@ -43,9 +45,14 @@ const Article = () => {
 
                                 <ReactMarkdown source={article.content} />
 
-                                <video controls width="500">
-                                    <source src={article.video} />
-                                </video>
+                                {article.video.url && (
+                                    <video controls width="500">
+                                        <source
+                                            src={videoUrl}
+                                            type="video/mkv"
+                                        />
+                                    </video>
+                                )}
                             </div>
                         </section>
                     </div>
