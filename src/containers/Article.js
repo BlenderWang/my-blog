@@ -42,6 +42,10 @@ const Article = () => {
                                 </p>
 
                                 <ReactMarkdown source={article.content} />
+
+                                <video controls width="500">
+                                    <source src={article.video} />
+                                </video>
                             </div>
                         </section>
                     </div>

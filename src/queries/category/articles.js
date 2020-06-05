@@ -4,7 +4,7 @@ const CATEGORY_ARTICLES_QUERY = gql`
     query Category($id: ID!) {
         category(id: $id) {
             name
-            articles {
+            articles(sort: "published_at:desc") {
                 id
                 title
                 excerpt
