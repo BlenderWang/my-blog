@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
-import { Spring } from "react-spring/renderprops";
-import VisibilitySensor from "react-visibility-sensor";
 
 const Card = ({ article }) => {
     const imageUrl =
@@ -13,34 +11,11 @@ const Card = ({ article }) => {
 
     return (
         <div className="card">
-            <VisibilitySensor>
-                {({ isVisible }) => (
-                    <Spring to={{ opacity: isVisible ? 1 : 0 }}>
-                        {({ opacity }) => (
-                            <img
-                                style={{ opacity }}
-                                src={imageUrl}
-                                alt={article.image.url}
-                                className="card__image"
-                            />
-                        )}
-                    </Spring>
-                )}
-            </VisibilitySensor>
-            <VisibilitySensor>
-                {({ isVisible }) => (
-                    <Spring to={{ opacity: isVisible ? 1 : 0 }}>
-                        {({ opacity }) => (
-                            <img
-                                style={{ opacity }}
-                                src={imageUrl}
-                                alt={article.image.url}
-                                className="card__image"
-                            />
-                        )}
-                    </Spring>
-                )}
-            </VisibilitySensor>
+            <img
+                src={imageUrl}
+                alt={article.image.url}
+                className="card__image"
+            />
             <div className="card__body">
                 <Link to={`/article/${article.id}`} className="link-reset">
                     <h3 className="card__title">{article.title}</h3>
@@ -60,29 +35,14 @@ const Card = ({ article }) => {
                     </Link>
                 </div>
             </div>
-            <VisibilitySensor>
-                {({ isVisible }) => (
-                    <Spring delay={200} to={{ opacity: isVisible ? 1 : 0 }}>
-                        {({ opacity }) => (
-                            <div
-                                style={{ opacity }}
-                                className="card__publishedAt"
-                            >
-                                <h4 className="date">
-                                    <Moment format="D">
-                                        {article.published_at}
-                                    </Moment>
-                                </h4>
-                                <h5 className="month year">
-                                    <Moment format="MMM YYYY">
-                                        {article.published_at}
-                                    </Moment>
-                                </h5>
-                            </div>
-                        )}
-                    </Spring>
-                )}
-            </VisibilitySensor>
+            <div className="card__publishedAt">
+                <h4 className="date">
+                    <Moment format="D">{article.published_at}</Moment>
+                </h4>
+                <h5 className="month year">
+                    <Moment format="MMM YYYY">{article.published_at}</Moment>
+                </h5>
+            </div>
         </div>
     );
 };
